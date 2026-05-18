@@ -47,7 +47,12 @@ async function start() {
     },
   });
 
-  await startMcp(app);
+  try {
+    await startMcp(app);
+    console.log('[MCP] MCP server started');
+  } catch (err) {
+    console.warn('[MCP] MCP start failed, continuing without it:', err?.message || err);
+  }
 
   app.useGlobalPipes(
     new ValidationPipe({
