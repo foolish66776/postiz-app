@@ -1,5 +1,5 @@
 [deploy]
-startCommand = "nginx && pnpm run pm2"
+startCommand = "pnpm run pm2"
 restartPolicy = "ON_FAILURE"
 restartPolicyMaxRetries = 10
 
