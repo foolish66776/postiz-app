@@ -1,3 +1,10 @@
-[phases.setup]
-    nixPkgs = ['nodejs', 'python3']
-    aptPkgs = ['build-essential', 'libudev-dev']
+[deploy]
+startCommand = "nginx && pnpm run pm2"
+restartPolicy = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+[build]
+builder = "NIXPACKS"
+
+[build.env]
+NODE_ENV = "production"
