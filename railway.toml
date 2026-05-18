@@ -3,6 +3,6 @@ builder = "DOCKERFILE"
 dockerfilePath = "Dockerfile.dev"
 
 [deploy]
-startCommand = "sh -c 'node /app/ecosystem.config.js && pm2 logs'"
+startCommand = "pm2 start /app/ecosystem.config.js --no-daemon"
 restartPolicy = "ON_FAILURE"
 restartPolicyMaxRetries = 10
